@@ -5,31 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>stopwatch</title>
     <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
         body{
             background-color: teal;
+            height: 50vh;
+            width: 60vw;
         }
         .container{
+            position: absolute;
             border: 1px solid black;
-            height: 200px;
+            height: 500px;
             width:50%;
             margin: 25%;
             text-align: center;
             border-radius: 20px;
             box-shadow: 0px 0px 16px; 
             background-color: wheat; 
+            padding: 70px;
+            justify-content: center;
+            margin-top: 150px;
+            margin-right: 30px;
+            font-size: 3rem;
         }
         button{
-           height: 40px;
-           width: 60px;
+            height: 60px;
+            font-size: 1.5rem;
+           width: 100px;
            border-radius: 5px; 
-           color:rgb(7, 136, 136);
+           color:rgb(21, 185, 185);
+           
         }
+        button:hover{
+            background-color:teal;
+           
+        }
+
 
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Stopwatch</h1>
+        <br>
 
         <div class="display">00hr : 00min : 00s : 00ms </div>
         <br>
@@ -39,6 +60,63 @@
     </div>
 </body>
 </html>
-<script src="index.js"></script> 
+
+<script>
+    let second=0
+let minute=0
+let hours=0
+let milisecond=0
+let time;
+
+let display_timer = document.querySelector(".display")
+
+
+    function start(){
+       time= setInterval(()=>{
+            milisecond+=100;
+            if(milisecond==1000){
+                milisecond=0
+                second+=1;
+
+            }
+
+           if(second==60){
+            second=0
+            minute++;
+           } 
+           if(minute==60){
+            minute=0
+            hours++;
+           }
+           display_timer.innerText=formatTime(hours)+" : " + formatTime(minute)+ " : "+ formatTime(second)+ " : " + formatTime(milisecond);
+        },100)
+
+    }
+
+    
+    function pouse(){
+        clearInterval(time)
+    }
+    function reset(){
+        second=0
+        minute=0
+        hours=0
+        milisecond=0
+
+        display_timer.innerText="00hr : 00min : 00s : 00ms"
+                
+        
+    }
+
+    // when left side timer will be 0 like hour , minute then next zero should be work in timer like sec , milisec
+
+    function formatTime(time){
+        return (time<10 ? "0" + time : time);
+    }
+
+    
+</script>
+
+
 
 
