@@ -1,62 +1,44 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>stopwatch</title>
+    <style>
+        body{
+            background-color: teal;
+        }
+        .container{
+            border: 1px solid black;
+            height: 200px;
+            width:50%;
+            margin: 25%;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 0px 0px 16px; 
+            background-color: wheat; 
+        }
+        button{
+           height: 40px;
+           width: 60px;
+           border-radius: 5px; 
+           color:rgb(7, 136, 136);
+        }
+
+    </style>
 </head>
 <body>
-    <div id="countdisplay">0
+    <div class="container">
+        <h1>Stopwatch</h1>
+
+        <div class="display">00hr : 00min : 00s : 00ms </div>
+        <br>
+        <button onClick="start()">Start</button>
+        <button onClick="pouse()">Pause</button>
+        <button onClick="reset()">Reset</button>
     </div>
-        <!-- <br> -->
-        <button onclick="start()">Start</button>
-        <button onclick="pause()">Pause</button>
-        <button onclick="reset()">Reset</button>
 </body>
 </html>
 <script src="index.js"></script> 
 
 
-
-
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Counting Example</title>
-</head>
-<body>
-    <p id="countDisplay">0</p>
-    <button onclick="startCount()">Start</button>
-    <button onclick="pauseCount()">Pause</button>
-    <button onclick="resetCount()">Reset</button>
-
-    <script>
-        let count = 0;
-        let intervalId;
-
-        function startCount() {
-            if (!intervalId) {
-                intervalId = setInterval(() => {
-                    count += 1;
-                    document.getElementById("countDisplay").innerText = count;
-                }, 1000);
-            }
-        }
-
-        function pauseCount() {
-            clearInterval(intervalId);
-            intervalId = null;
-        }
-
-        function resetCount() {
-            clearInterval(intervalId);
-            intervalId = null;
-            count = 0;
-            document.getElementById("countDisplay").innerText = count;
-        }
-    </script>
-</body>
-</html> -->
