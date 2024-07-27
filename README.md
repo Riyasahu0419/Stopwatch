@@ -1,7 +1,8 @@
 # Stopwatch
 
 
-A simple and intuitive Stopwatch application built with [Your Technology Stack]. Designed to keep track of elapsed time with precision and ease.
+
+Stopwatch is a user-friendly application designed to track elapsed time. Built with [Your Technology Stack], it offers features like start, pause, and reset functionality, displaying time in hours, minutes, seconds, and milliseconds.
 
 ## Features
 - Start, pause, and reset functionality.
